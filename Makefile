@@ -6,7 +6,7 @@
 #    By: aessaoud <aessaoud@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/11 19:05:11 by aessaoud          #+#    #+#              #
-#    Updated: 2022/10/13 12:13:47 by aessaoud         ###   ########.fr        #
+#    Updated: 2022/12/15 11:59:52 by aessaoud         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,8 +44,12 @@ ft_putchar_fd.c \
 ft_putstr_fd.c \
 ft_putendl_fd.c \
 ft_putnbr_fd.c \
-
-SRCSBONUS=ft_lstadd_front.c \
+ft_printf.c \
+ft_putchar.c \
+ft_putstr.c \
+ft_putnbr.c \
+ft_putnbru.c \
+ft_lstadd_front.c \
 ft_lstadd_back.c \
 ft_lstclear.c \
 ft_lstdelone.c \
@@ -54,10 +58,9 @@ ft_lstlast.c \
 ft_lstmap.c \
 ft_lstnew.c \
 ft_lstsize.c \
-	   
+
 
 OBJS=${SRCS:.c=.o}
-OBJSBONUS=${SRCSBONUS:.c=.o}
 NAME=libft.a
 NAMEBONUS=libft.a
 CC=gcc
@@ -72,8 +75,6 @@ all:$(NAME)
 ${NAME}:${OBJS}
 	ar -rc $@ $(OBJS)
 
-bonus:${OBJS} ${OBJSBONUS}
-	ar -rc ${NAME} ${OBJS} ${OBJSBONUS}
 clean:
 	$(RM) $(OBJS) $(OBJSBONUS)
 
