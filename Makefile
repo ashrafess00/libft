@@ -6,7 +6,7 @@
 #    By: aessaoud <aessaoud@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/11 19:05:11 by aessaoud          #+#    #+#              #
-#    Updated: 2022/12/15 11:59:52 by aessaoud         ###   ########.fr        #
+#    Updated: 2022/12/15 12:15:30 by aessaoud         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,7 +58,10 @@ ft_lstlast.c \
 ft_lstmap.c \
 ft_lstnew.c \
 ft_lstsize.c \
-
+get_next_line.c \
+get_next_line_utils.c \
+get_next_line_bonus.c \
+get_next_line_utils_bonus.c
 
 OBJS=${SRCS:.c=.o}
 NAME=libft.a

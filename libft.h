@@ -6,7 +6,7 @@
 /*   By: aessaoud <aessaoud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 13:30:06 by aessaoud          #+#    #+#             */
-/*   Updated: 2022/12/15 11:59:26 by aessaoud         ###   ########.fr       */
+/*   Updated: 2022/12/15 12:10:31 by aessaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,16 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
+# include <unistd.h>
+# include <sys/types.h>
+# include <fcntl.h>
+# include <stdlib.h>
+# include <string.h>
+# include <limits.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 520
+# endif
 
 typedef struct s_list
 {
@@ -71,4 +81,10 @@ int		ft_putchar(unsigned char c);
 int		ft_putstr(char *str);
 int		ft_putnbr(long int num, char *base);
 int		ft_putnbru(unsigned long int num, char *base);
+char	*get_next_line(int fd);
+int		is_nl_found(char *s);
+char	*expand(char *s1, char *s2);
+void	split_line(char **line, char *rest);
+char	*copy_rest(char *s);
+
 #endif
