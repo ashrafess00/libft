@@ -6,11 +6,23 @@
 #    By: aessaoud <aessaoud@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/11 19:05:11 by aessaoud          #+#    #+#              #
-#    Updated: 2022/12/15 12:15:30 by aessaoud         ###   ########.fr        #
+#    Updated: 2022/12/22 14:41:39 by aessaoud         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = ft_memset.c \
+CC=gcc
+CFLAGS=-Wall -Wextra -Werror
+RM=rm -rf
+NAME=libft.a
+
+LIBFT_DIR=ft_libft/
+PRINTF_DIR=ft_printf/
+GNL_DIR=get_next_line/
+OBJS_DIR=objs/
+
+INC=-I ./includes
+
+LIBFT_SRCS_LIST = ft_memset.c \
 ft_atoi.c \
 ft_bzero.c \
 ft_tolower.c \
@@ -44,11 +56,6 @@ ft_putchar_fd.c \
 ft_putstr_fd.c \
 ft_putendl_fd.c \
 ft_putnbr_fd.c \
-ft_printf.c \
-ft_putchar.c \
-ft_putstr.c \
-ft_putnbr.c \
-ft_putnbru.c \
 ft_lstadd_front.c \
 ft_lstadd_back.c \
 ft_lstclear.c \
@@ -58,30 +65,52 @@ ft_lstlast.c \
 ft_lstmap.c \
 ft_lstnew.c \
 ft_lstsize.c \
-get_next_line.c \
-get_next_line_utils.c \
-get_next_line_bonus.c \
-get_next_line_utils_bonus.c
 
-OBJS=${SRCS:.c=.o}
-NAME=libft.a
-NAMEBONUS=libft.a
-CC=gcc
-CFLAGS=-Wall -Wextra -Werror
-RM=rm -f
+PRINTF_SRCS_LIST=ft_printf.c\
+ft_putchar.c\
+ft_putnbr.c\
+ft_putnbru.c\
+ft_putstr.c
 
-all:$(NAME)
+GNL_SRCS_LIST=get_next_line.c\
+get_next_line_utils.c\
 
-.c.o:
-	$(CC) $(CFLAGS) -c $< -o ${<:.c=.o}
+LIBFT_PATH=$(addprefix $(LIBFT_DIR), $(LIBFT_SRCS_LIST))
+PRINTF_PATH=$(addprefix $(PRINTF_DIR), $(PRINTF_SRCS_LIST))
+GNL_PATH=$(addprefix $(GNL_DIR), $(GNL_SRCS_LIST))
+SRCS=$(LIBFT_PATH) $(PRINTF_PATH) $(GNL_PATH)
 
+OBJ_1=$(LIBFT_SRCS_LIST:.c=.o)
+OBJ_2=$(PRINTF_SRCS_LIST:.c=.o)
+OBJ_3=$(GNL_SRCS_LIST:.c=.o)
+
+OBJS_LIST=$(OBJ_1) $(OBJ_2) $(OBJ_3)
+
+OBJS=$(addprefix $(OBJS_DIR), $(OBJS_LIST))
+
+all:$(OBJS_DIR) $(NAME)
+
+$(OBJS_DIR):
+	mkdir -p objs
+	
 ${NAME}:${OBJS}
-	ar -rc $@ $(OBJS)
+	ar -rc $(NAME) $(OBJS)
+
+$(OBJS_DIR)%.o:$(LIBFT_DIR)%.c
+	$(CC) $(CFLAGS) $(INC)  -c -o $@ $^
+
+$(OBJS_DIR)%.o:$(PRINTF_DIR)%.c
+	$(CC) $(CFLAGS) $(INC)  -c -o $@ $^
+
+$(OBJS_DIR)%.o:$(GNL_DIR)%.c
+	$(CC) $(CFLAGS) $(INC)  -c -o $@ $^
+	
+
 
 clean:
-	$(RM) $(OBJS) $(OBJSBONUS)
+	$(RM) $(OBJS_DIR)
 
-fclean:
-	$(RM) $(NAME) $(OBJS) $(OBJSBONUS)
+fclean: clean
+	$(RM) $(NAME)
 
 re: fclean all
