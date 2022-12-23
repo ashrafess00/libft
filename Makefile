@@ -5,12 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: aessaoud <aessaoud@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/10/11 19:05:11 by aessaoud          #+#    #+#              #
-<<<<<<< HEAD
-#    Updated: 2022/12/23 14:39:36 by aessaoud         ###   ########.fr        #
-=======
-#    Updated: 2022/12/22 19:42:51 by aessaoud         ###   ########.fr        #
->>>>>>> 52bb757eed95176bc3899ef0aaca779d844c01d5
+#    Created: 2022/12/23 14:50:52 by aessaoud          #+#    #+#              #
+#    Updated: 2022/12/23 14:54:44 by aessaoud         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +20,7 @@ PRINTF_DIR=ft_printf/
 GNL_DIR=get_next_line/
 OBJS_DIR=objs/
 
-INC=-I ./includes
+INC=-I./
 
 LIBFT_SRCS_LIST = ft_memset.c \
 ft_atoi.c \
@@ -99,16 +95,16 @@ $(OBJS_DIR):
 	mkdir -p objs
 	
 ${NAME}:${OBJS}
-	ar -rc $(NAME) $(OBJS)
+	ar -rc $(NAME) $(OBJS) 
 
 $(OBJS_DIR)%.o:$(LIBFT_DIR)%.c
-	$(CC) $(CFLAGS) $(INC)  -c -o $@ $^
+	$(CC) $(CFLAGS) $(INC) -c -o $@ $^
 
 $(OBJS_DIR)%.o:$(PRINTF_DIR)%.c
-	$(CC) $(CFLAGS) $(INC)  -c -o $@ $^
+	$(CC) $(CFLAGS) $(INC) -c -o $@ $^
 
 $(OBJS_DIR)%.o:$(GNL_DIR)%.c
-	$(CC) $(CFLAGS) $(INC)  -c -o $@ $^
+	$(CC) $(CFLAGS) $(INC) -c -o $@ $^
 	
 clean:
 	$(RM) $(OBJS_DIR)

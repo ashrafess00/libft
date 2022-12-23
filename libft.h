@@ -6,7 +6,7 @@
 /*   By: aessaoud <aessaoud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 14:48:42 by aessaoud          #+#    #+#             */
-/*   Updated: 2022/12/23 14:44:31 by aessaoud         ###   ########.fr       */
+/*   Updated: 2022/12/23 14:48:12 by aessaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,4 +71,13 @@ void	ft_lstclear(t_list **lst, void (*del)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 
+int		is_nl_found(char *s);
+char	*copy_rest(char *s);
+char	*expand(char *s1, char *s2);
+void	split_line(char **line, char *rest);
+
+int		ft_putchar(unsigned char c);
+int		ft_putnbr(long int num, char *base);
+int		ft_putnbru(unsigned long int num, char *base);
+int		ft_putstr(char *str);
 #endif

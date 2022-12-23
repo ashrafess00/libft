@@ -6,11 +6,11 @@
 /*   By: aessaoud <aessaoud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 14:32:25 by aessaoud          #+#    #+#             */
-/*   Updated: 2022/12/23 14:35:28 by aessaoud         ###   ########.fr       */
+/*   Updated: 2022/12/23 14:51:23 by aessaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 void	*ft_memset(void *b, int c, int len)
 {
