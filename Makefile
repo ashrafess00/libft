@@ -6,7 +6,11 @@
 #    By: aessaoud <aessaoud@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/11 19:05:11 by aessaoud          #+#    #+#              #
+<<<<<<< HEAD
 #    Updated: 2022/12/23 14:39:36 by aessaoud         ###   ########.fr        #
+=======
+#    Updated: 2022/12/22 19:42:51 by aessaoud         ###   ########.fr        #
+>>>>>>> 52bb757eed95176bc3899ef0aaca779d844c01d5
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,6 +69,7 @@ ft_lstlast.c \
 ft_lstmap.c \
 ft_lstnew.c \
 ft_lstsize.c \
+ft_max.c
 
 PRINTF_SRCS_LIST=ft_printf.c\
 ft_putchar.c\
