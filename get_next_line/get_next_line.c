@@ -6,12 +6,11 @@
 /*   By: aessaoud <aessaoud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 11:49:54 by aessaoud          #+#    #+#             */
-/*   Updated: 2022/12/22 14:42:07 by aessaoud         ###   ########.fr       */
+/*   Updated: 2022/12/23 14:36:09 by aessaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/get_next_line.h"
-#include "../includes/libft.h"
+#include "../libft.h"
 
 static void	check_eof(char **line, int read_size)
 {

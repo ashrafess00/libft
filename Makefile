@@ -6,7 +6,7 @@
 #    By: aessaoud <aessaoud@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/11 19:05:11 by aessaoud          #+#    #+#              #
-#    Updated: 2022/12/22 14:41:39 by aessaoud         ###   ########.fr        #
+#    Updated: 2022/12/23 14:39:36 by aessaoud         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -105,8 +105,6 @@ $(OBJS_DIR)%.o:$(PRINTF_DIR)%.c
 $(OBJS_DIR)%.o:$(GNL_DIR)%.c
 	$(CC) $(CFLAGS) $(INC)  -c -o $@ $^
 	
-
-
 clean:
 	$(RM) $(OBJS_DIR)
 

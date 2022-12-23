@@ -6,12 +6,11 @@
 /*   By: aessaoud <aessaoud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 18:26:11 by aessaoud          #+#    #+#             */
-/*   Updated: 2022/12/22 14:43:15 by aessaoud         ###   ########.fr       */
+/*   Updated: 2022/12/23 14:42:38 by aessaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/get_next_line.h"
-#include "../includes/libft.h"
+#include "../libft.h"
 
 int	is_nl_found(char *s)
 {

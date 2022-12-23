@@ -6,11 +6,11 @@
 /*   By: aessaoud <aessaoud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 20:19:04 by aessaoud          #+#    #+#             */
-/*   Updated: 2022/12/22 13:15:59 by aessaoud         ###   ########.fr       */
+/*   Updated: 2022/12/23 14:35:52 by aessaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "../libft.h"
 
 int	ft_putstr(char *str)
 {
