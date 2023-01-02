@@ -6,7 +6,7 @@
 /*   By: aessaoud <aessaoud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 11:16:11 by aessaoud          #+#    #+#             */
-/*   Updated: 2022/12/23 14:51:23 by aessaoud         ###   ########.fr       */
+/*   Updated: 2022/12/24 21:40:01 by aessaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,17 +42,9 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	}
 	i = -1;
 	while (s2[++i])
-	{
-		new_str[new_str_i] = s2[i];
-		new_str_i++;
-	}
+		new_str[new_str_i++] = s2[i];
 	new_str[new_str_i] = '\0';
+	free((char *)s1);
+	free((char *)s2);
 	return (new_str);
 }
-
-// int main()
-// {
-// 	char l[] = "ashraf";
-// 	char ll[] = "essaoudi";
-// 	printf("%s", ft_strjoin(l, ll));
-// }

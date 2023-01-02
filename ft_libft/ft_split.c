@@ -6,7 +6,7 @@
 /*   By: aessaoud <aessaoud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 16:54:33 by aessaoud          #+#    #+#             */
-/*   Updated: 2022/12/23 14:51:23 by aessaoud         ###   ########.fr       */
+/*   Updated: 2022/12/24 21:46:20 by aessaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ static void	create_arr(const char *s, char **main_arr, char c)
 		while (s[i] && s[i] != c)
 			i++;
 	}
+	free((char *)s);
 }
 
 char	**ft_split(char const *s, char c)
@@ -75,19 +76,3 @@ char	**ft_split(char const *s, char c)
 	}
 	return (0);
 }
-
-// int	main()
-// {
-// 	char	word[] = "ashraf,ess,lolo";
-// 	int	i = 0;
-// 	char	del = ',';
-// 	int	c;
-
-// 	c = 0;
-// 	while (word[i])
-// 	{
-// 		while (word[i] && word[i] == del)
-// 			i++;
-// 		if(word[i])
-// 	}
-// }
