@@ -65,8 +65,6 @@ ft_lstlast.c \
 ft_lstmap.c \
 ft_lstnew.c \
 ft_lstsize.c \
-ft_max.c\
-ft_strcmp.c\
 
 PRINTF_SRCS_LIST=ft_printf.c\
 ft_putchar.c\
