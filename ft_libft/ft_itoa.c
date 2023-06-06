@@ -6,7 +6,7 @@
 /*   By: aessaoud <aessaoud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 11:44:08 by aessaoud          #+#    #+#             */
-/*   Updated: 2022/12/23 14:51:23 by aessaoud         ###   ########.fr       */
+/*   Updated: 2023/06/06 13:56:27 by aessaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,11 @@ char	*create_string(long number, size_t chars_len, size_t is_neg)
 {
 	char		*number_string;
 	size_t		i;
+	int			l;
 
 	i = 0;
 	number_string = ft_calloc(chars_len + 1, sizeof(char));
+	l = chars_len;
 	if (number_string == NULL)
 		return (0);
 	if (is_neg)
@@ -72,10 +74,3 @@ char	*ft_itoa(int n)
 	}
 	return (p);
 }
-
-// #include <stdio.h>
-// #include <limits.h>
-// int	main()
-// {
-// 	printf("%s", ft_itoa(1015));
-// }

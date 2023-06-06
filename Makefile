@@ -6,7 +6,7 @@
 #    By: aessaoud <aessaoud@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/23 14:50:52 by aessaoud          #+#    #+#              #
-#    Updated: 2022/12/24 21:39:43 by aessaoud         ###   ########.fr        #
+#    Updated: 2023/05/10 21:14:54 by aessaoud         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,8 @@ GNL_DIR=get_next_line/
 OBJS_DIR=objs/
 
 INC=-I./
+
+count := 0
 
 LIBFT_SRCS_LIST = ft_memset.c \
 ft_atoi.c \
@@ -91,24 +93,24 @@ OBJS=$(addprefix $(OBJS_DIR), $(OBJS_LIST))
 all:$(OBJS_DIR) $(NAME)
 
 $(OBJS_DIR):
-	mkdir -p objs
+	@mkdir -p objs
 	
 ${NAME}:${OBJS}
-	ar -rc $(NAME) $(OBJS) 
-
+	@ar -rc $(NAME) $(OBJS) 
+	
 $(OBJS_DIR)%.o:$(LIBFT_DIR)%.c
-	$(CC) $(CFLAGS) $(INC) -c -o $@ $^
-
+	@$(CC) $(CFLAGS) $(INC) -c -o $@ $^
+	
 $(OBJS_DIR)%.o:$(PRINTF_DIR)%.c
-	$(CC) $(CFLAGS) $(INC) -c -o $@ $^
+	@$(CC) $(CFLAGS) $(INC) -c -o $@ $^
 
 $(OBJS_DIR)%.o:$(GNL_DIR)%.c
-	$(CC) $(CFLAGS) $(INC) -c -o $@ $^
+	@$(CC) $(CFLAGS) $(INC) -c -o $@ $^
 	
 clean:
-	$(RM) $(OBJS_DIR)
+	@$(RM) $(OBJS_DIR)
 
 fclean: clean
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
 
 re: fclean all
